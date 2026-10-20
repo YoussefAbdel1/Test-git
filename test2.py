@@ -1,41 +1,38 @@
-class student: 
-    def __init__(self, name, id, grade): 
+class Student: 
+    def __init__(self, id, name, grade): 
+        self.id = id 
         self.name = name 
-        self.id = id
-        self.grade = grade 
+        self.grade = grade
 
-    def display_info(self): 
-        print("Name:", self.name) 
-        print("ID:", self.id) 
-        print("Grade:", self.grade)
+    def display(self):
+        print(f"ID: { self.id}, Name: {self.name}, Grade: {self.grade}")
 
 
-class graduateStudent(student): 
-    def __init__(self, name, id, grade, program_title): 
-        super().__init__(name, id, grade) 
-        self.program_title = program_title 
+class underGrad(Student): 
 
-    def display_info(self): 
-        super().display_info() 
-        print("Program Title:", self.program_title)
+    def __init__(self, id, name, grade, major): 
+        super().__init__(id, name, grade)
+        self.major = major
 
-
-class undergraduateStudent(student):
-    def __init__(self, name, id, grade, major): 
-        super().__init__(name, id, grade) 
-        self.major = major 
-
-    def display_info(self): 
-        super().display_info() 
-        print("Major:", self.major)
+    def display(self):
+        super().display()
+        print(f"Major: {self.major}")
 
 
-studentJohn = student("John Doe", "12345", 56)
-graduateStudentAlice = graduateStudent("Alice Smith", "67890", 89, "Masters of Science")
-undergraduateStudentBob = undergraduateStudent("Bob Johnson", "54321", 75, "Electrical Engineering")
+class Grad(Student): 
 
-studentJohn.display_info()
-graduateStudentAlice.display_info()
-undergraduateStudentBob.display_info()
-print("Is studentJohn an instance of student?", isinstance(studentJohn, student))
-print("Is graduateStudentAlice an instance of student?", isinstance(graduateStudentAlice, student))
+    def __init__(self, id, name, grade, program): 
+        super().__init__(id, name, grade)
+        self.program = program
+
+    def display(self): 
+        super().display()
+        print(f"Program: {self.program}")
+
+john = underGrad(123,"John Doe", 98, "Computer Science")
+alyssa = Student(456,"Alyssa Smith", 95)
+michael = Grad(789,"Michael Johnson", 90, "Master of Science")
+
+john.display()
+alyssa.display()
+michael.display()
