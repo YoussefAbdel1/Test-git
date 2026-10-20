@@ -31,7 +31,7 @@ class Grad(Student):
 
 john = underGrad(123,"John Doe", 98, "Computer Science")
 alyssa = Student(456,"Alyssa Smith", 95)
-michael = Grad(789,"Michael Johnson", 90, "Master of Science")
+michael = Grad(79,"Michael Johnson", 90, "Master of Science")
 
 john.display()
 alyssa.display()
