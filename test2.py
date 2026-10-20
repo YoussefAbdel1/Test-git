@@ -37,4 +37,5 @@ undergraduateStudentBob = undergraduateStudent("Bob Johnson", "54321", 75, "Elec
 studentJohn.display_info()
 graduateStudentAlice.display_info()
 undergraduateStudentBob.display_info()
-print(" ")
+print("Is studentJohn an instance of student?", isinstance(studentJohn, student))
+print("Is graduateStudentAlice an instance of student?", isinstance(graduateStudentAlice, student))
